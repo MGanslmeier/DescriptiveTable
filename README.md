@@ -7,6 +7,7 @@ Publishers often request basic summary statistics of your dataset. The function 
 
 Usually, journals also ask you for data source information. The following lines combine the summary statistics table and the source information in one Excel sheet.
 
-	desc_table <- data.frame(var_short = sum_stats$var_short, stringsAsFactors = F) %>% mutate(var_long = "", description = "", source = "", domain = "")
-    df_list <- list("Descriptive Table" = desc_table, "Summary Statistics Table" = sum_stats)
-  write.xlsx(df_list, file = "data/desc_sum_tables.xlsx")
+	desc_table <- data.frame(var_short = sum_stats$var_short, stringsAsFactors = F) %>% 
+	mutate(var_long = "", description = "", source = "", domain = "")
+    desc_sum_tables <- list("Descriptive Table" = desc_table, "Summary Statistics Table" = sum_stats)
+    write.xlsx(desc_sum_tables, file = "data/desc_sum_tables.xlsx")
